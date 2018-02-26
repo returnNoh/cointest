@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
+<title>jQuery예제</title>
+<script>
+$(function(){
+	var coinName="BTC";
+	//setInterval(function(){
+	$.getJSON("https://api.bithumb.com/public/recent_transactions/"+coinName+"?offset=0&count=10",
+			function(data){
+		
+				//1.컬렉션객체(배열)(items항목만)
+				/*
+				items:[media{m="http:\/\/farm5.staticflickr.com\/4660\/40382561792_42227d0ca2_m.jpg"}]
+				*/
+				
+				$.each(data.data,function(index,item){
+				$('#tab').append("<tr>"
+						+"<td>"+"coin_no(번호):"+item.cont_no+"</td>"
+						+"<td>"+"transaction_date(날짜):"+item.transaction_date+"</td>"
+						+"<td>"+"type(구매/판매):"+item.type+"</td>"
+						+"<td>"+"units_traded(수량):"+item.units_traded+"</td>"
+						+"<td>"+"price(개당가격):"+item.price+"</td>"
+						+"<td>"+"total(거래금액):"+item.total+"</td>"
+						+"</tr>");
+				
+				if(index==5)return false;
+				})
+			})
+			//,10000})
+})
+</script>
+
+
+
+
+</head>
+<body>
+
+<table id="tab" border="1">
+
+
+
+</table>
+
+
+
+</body>
+</html>

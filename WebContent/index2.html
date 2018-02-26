@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
+<title>jQuery예제</title>
+<script>
+$(function(){
+	var coinName="BTC";
+	
+	$.getJSON("https://api.bithumb.com/info/balance?apiKey=24fe656e1dc73bd7dc938133d2ed1196",
+			function(data){
+		
+				//1.컬렉션객체(배열)(items항목만)
+				/*
+				items:[media{m="http:\/\/farm5.staticflickr.com\/4660\/40382561792_42227d0ca2_m.jpg"}]
+				*/
+				
+				$.each(data.data,function(index,item){
+				$('#tab').append("<tr>"
+						+"<td>"+"total.btc:"+item.total.btc+"</td>"
+						/* +"<td>"+"transaction_date:"+item.transaction_date+"</td>"
+						+"<td>"+"type:"+item.type+"</td>"
+						+"<td>"+"units_traded:"+item.units_traded+"</td>"
+						+"<td>"+"price:"+item.price+"</td>"
+						+"<td>"+"total:"+item.total+"</td>" */
+						+"</tr>");
+				
+				if(index==5)return false;
+				})
+			})
+			
+})
+</script>
+
+
+
+
+</head>
+<body>
+
+<table id="tab" border="1">
+
+
+
+</table>
+
+
+
+</body>
+</html>
