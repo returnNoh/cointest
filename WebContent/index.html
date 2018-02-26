@@ -7,10 +7,10 @@
 <script>
 $(function(){
 	var coinName="BTC";
-	//setInterval(function(){
+	setInterval(function(){
 	$.getJSON("https://api.bithumb.com/public/recent_transactions/"+coinName+"?offset=0&count=10",
 			function(data){
-		
+				$('#tab').empty();
 				//1.컬렉션객체(배열)(items항목만)
 				/*
 				items:[media{m="http:\/\/farm5.staticflickr.com\/4660\/40382561792_42227d0ca2_m.jpg"}]
@@ -29,7 +29,7 @@ $(function(){
 				if(index==5)return false;
 				})
 			})
-			//,10000})
+			},10000)
 })
 </script>
 
