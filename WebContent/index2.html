@@ -7,9 +7,8 @@
 <script>
 $(function(){
 	var coinName="BTC";
-	
-	$.getJSON("https://api.bithumb.com/info/account?apiKey=3e55229c3f0698590fb0863a12b96fd9&secretKey=51537ad262226e44037c026973376323&currency=BTC",
-			function(data){
+	var url="https://api.bithumb.com/info/account?apiKey=3e55229c3f0698590fb0863a12b96fd9&secretKey=51537ad262226e44037c026973376323&currency=BTC"
+	$.getJSON(url,function(data){
 		
 				//1.컬렉션객체(배열)(items항목만)
 				/*
@@ -27,7 +26,7 @@ $(function(){
 						+"<td>"+"total:"+item.total+"</td>" */
 						+"</tr>");
 				
-				if(index==5)return false;
+			//	if(index==5)return false;
 				})
 			})
 			
