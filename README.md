@@ -5,6 +5,9 @@ jQuery를 배우고  json 파일을 사용하는 방법을 배운 직후
 json을 사용한다는 것을 과거에 공부한것으로 인해 기억하고 있어서 
 배운것을 기준으로 시작한 가상화폐관련 프로젝트 입니다.
 
+## 기능구현
+- 일정시간마다 빗썸 공용api를 이용하여 원하는 코인의 가격을 불러오기(json)
+
 
 ### [팀프로젝트 TodayLunch](https://github.com/returnNoh/TodayLunch)
 
